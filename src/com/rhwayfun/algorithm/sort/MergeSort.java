@@ -38,4 +38,8 @@ public class MergeSort {
 				data[cur] = temp[i2++];
 		}
 	}
+	
+	public static void main(String[] args) {
+		sort(new int[]{6,202,100,301,38,8,1});
+	}
 }
