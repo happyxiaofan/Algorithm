@@ -1,2 +1,2 @@
 this is my github.
-I am learning git command.
+I am learning git command and java.
