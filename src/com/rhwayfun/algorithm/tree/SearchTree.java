@@ -30,7 +30,7 @@ public class SearchTree {
 		if(node==null){
 			node = new TreeNode(value);
 		}else{
-			if(value <= node.value){
+			if(value <= node.val){
 				node.left = insert(value,node.left);
 			}else{
 				node.right = insert(value,node.right);
@@ -44,9 +44,9 @@ public class SearchTree {
 		if(node==null){
 			return false;
 		}
-		if(node.value == value){
+		if(node.val == value){
 			return true;
-		}else if(value < node.value){
+		}else if(value < node.val){
 			return lookup(value,node.left);
 		}else{
 			return lookup(value,node.right);
@@ -93,7 +93,7 @@ public class SearchTree {
 		//后序遍历，先打印左孩子和右孩子，最后才打印数值
 		printTree(node.left);
 		printTree(node.right);
-		System.out.println(node.value + " ");
+		System.out.println(node.val + " ");
 	}
 	
 	//构建一个二叉树
@@ -117,9 +117,9 @@ public class SearchTree {
 		
 		if(node == null){
 			return node;
-		}else if(value < node.value){//向左子树中寻找要删除的节点
+		}else if(value < node.val){//向左子树中寻找要删除的节点
 			node.left = delete(value, node.left);
-		}else if(value > node.value){//向右子树中寻找要删除的节点
+		}else if(value > node.val){//向右子树中寻找要删除的节点
 			node.right = delete(value, node.right);
 		}else{
 			//如果语句执行到这里，说明在该二叉树中找到了要删除的节点
@@ -129,10 +129,10 @@ public class SearchTree {
 				//找到右子树中的最左边的叶子节点
 				tmpNode = finMin(node.right);
 				//把最小元素节点的值赋给当前要被删除的元素
-				node.value = tmpNode.value;
+				node.val = tmpNode.val;
 				//由于是从右边寻找的最小元素的叶子节点，故当前节点一定是右节点
 				//下面需要把要删除节点的直接右孩子节点的引用指向tmpNode节点
-				node.right = delete(node.value, node.right);
+				node.right = delete(node.val, node.right);
 			}else{
 				//有一个或者零个孩子节点
 				if(node.left == null){//只有右孩子节点，可以发现当没有孩子节点时，这个判断也可以执行，只不过重新引用的节点变成了null

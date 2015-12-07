@@ -9,14 +9,15 @@ package com.rhwayfun.algorithm.tree;
  * @version 1.0
  */
 public class TreeNode {
-
-	public int value;
-	public TreeNode left;
-	public TreeNode right;
+	int val = 0;
+	TreeNode left = null;
+	TreeNode right = null;
 	
-	public TreeNode(int value){
-		this.value = value;
-		this.left = null;
-		this.right = null;
+	public TreeNode(){}
+
+	public TreeNode(int val) {
+		this.val = val;
+
 	}
+	
 }
